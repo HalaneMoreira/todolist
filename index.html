@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,60 +8,67 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    
-    <div class="container">
-       <h1>Lista de Tarefas</h1>
-        <div class="user">
-            <img class="user_green" src="images/user_green.png" alt="user_green">
-            <h2 class=" name"> Nome genérico</h3>
-            <p class="user_description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eius repellat obcaecati suscipit quasi sit accusamus officiis! Voluptatem minus quidem inventore quos, ea, blanditiis est illum neque excepturi nesciunt iusto!</p>
 
-            <ul class="user_link">
-                <li> <a href="#"> Link1</a></li> <br/>
-                <li> <a href="#"> Link2</a></li>
-                <br/>
-                <li> <a href="#"> Link3</a></li>
-                <br/>
-                <li> <a href="#"> Link4</a></li>
-            </ul>
+    <div class="main">
+        <div class="container">
+            <div class="user card">
+                <img class="user-image" src="images/user_green.png" alt="user_green">
+                <h2 class=" name"> Nome genérico</h3>
+                    <p class="user_description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+                        eius repellat obcaecati suscipit quasi sit accusamus officiis! Voluptatem minus quidem inventore
+                        quos, ea, blanditiis est illum neque excepturi nesciunt iusto!</p>
+
+                    <ul class="user_link">
+                        <li> <a href="#"> Link1</a></li> <br />
+                        <li> <a href="#"> Link2</a></li>
+                        <br />
+                        <li> <a href="#"> Link3</a></li>
+                        <br />
+                        <li> <a href="#"> Link4</a></li>
+                    </ul>
+
+            </div>
+            <div class="todo card">
+                <div class="title-container">
+                    <h1>Lista de Tarefas</h1>
+                </div>
+                <div class="list">
+                    <div class="list-day">
+                        <h2> Dia</h2>
+                        <input type="text" id="input_box_day" placeholder="Adicione sua tarefa">
+                        <button onclick="addTask('day')">Add</button>
+
+                        <ul id="list_container_day">
+
+
+                        </ul>
+                    </div>
+
+                    <div class="list-night">
+                        <h2> Noite</h2>
+                        <input type="text" id="input_box_night" placeholder="Adicione sua tarefa">
+                        <button onclick="addTask('night')">Add</button>
+
+                        <ul id="list_container_night">
+
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
-
-        <div class="todo_list_day">
-            <h2> Dia</h2>
-            <input type="text" id="input_box" placeholder="Adicione sua tarefa"> 
-            <button onclick="addTask()" >Add</button>
-
-            <ul id="list_container">
-                <!-- <li class="checked"> Tarefa 1 </li>
-                <li> Tarefa 2 </li>
-                <li> Tarefa 3 </li> -->
-
-            </ul>
-
-        </div>
-
-        <div class="todo_list_night"> 
-            <h2> Noite</h2>
-            <input type="text" id="input_box" placeholder="Adicione sua tarefa"> 
-            <button onclick="addTask()">Add</button>
-
-            <ul id="list_container">
-                <!-- <li class="checked"> Tarefa 1 </li>
-                <li> Tarefa 2 </li>
-                <li> Tarefa 3 </li> -->
-
-            </ul>
-
-        </div>
-
-       
-
 
     </div>
-    
+
+
+
     <script src="script.js"></script>
 
 </body>
+
 </html>

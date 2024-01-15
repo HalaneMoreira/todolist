@@ -1,7 +1,11 @@
-const inputBox = document.getElementById("input_box");
-const listContainer = document.getElementById("list_container");
+const listContainerDay = document.getElementById(`list_container_day`);
+const listContainerNight = document.getElementById(`list_container_night`);
 
-function addTask(){
+
+
+function addTask(type){
+    const inputBox = document.getElementById(`input_box_${type}`);
+const listContainer = document.getElementById(`list_container_${type}`);
     if(inputBox.value === ''){
         alert("você precisa escrever uma tarefa!")
     }
@@ -14,25 +18,22 @@ function addTask(){
         li.appendChild(span); 
     }
     inputBox.value = "";
-    saveData();
+    
 }
 
-listContainer.addEventListener("click", function(e){
-    if(e.target.tagName === "LI"){
+function toggleCheckBox(e){
+    console.log(e.target.tagName)
+    if(e.target.tagName.toLowerCase() === "li"){
         e.target.classList.toggle("checked");
-        saveData();
+        
     }
-    else if(e.target.tagName === "SPAN"){
+    else if(e.target.tagName.toLowerCase()  === "span"){
         e.target.parentElement.remove();
-        saveData();
+        
     }
-}, false);
-
-function saveData(){
-    localStorage.setItem("data", listContainer.innerHTML);
 }
 
-function showTask(){
-    listContainer.innerHtml = localStorage.getItem("data");
-}
-showTask();
+listContainerDay.addEventListener("click",toggleCheckBox)
+listContainerNight.addEventListener("click",toggleCheckBox)
+
+
